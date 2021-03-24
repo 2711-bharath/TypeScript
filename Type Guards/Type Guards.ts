@@ -58,7 +58,6 @@ function doStuff1(q: A | B) {
 
 
 // user defined type guard
-
 interface Foo {
     foo: number;
     common: string;
@@ -71,21 +70,19 @@ interface Bar {
 
 
 //  * User Defined Type Guard!
-
 function isFoo(arg: any): arg is Foo {
     return arg.foo !== undefined;
 }
 
 //  * Sample usage of the User Defined Type Guard
-
 function doStuff2(arg: Foo | Bar) {
     if (isFoo(arg)) {
-        console.log(`given Foo argument : `+arg.foo); // OK
-        // console.log(arg.bar); // Error!
+        console.log(`given Foo argument : `+arg.foo); 
+        // console.log(arg.bar); // Error
     }
     else {
-        // console.log(arg.foo); // Error!
-        console.log(`given Bar argument : `+arg.bar); // OK
+        // console.log(arg.foo); // Error
+        console.log(`given Bar argument : `+arg.bar); 
     }
 }
 

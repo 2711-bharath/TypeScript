@@ -27,10 +27,10 @@ var Bar = /** @class */ (function () {
 function doStuff(arg) {
     if (arg instanceof Foo) {
         console.log(arg.foo);
-        // console.log(arg.bar);  Error!
+        // console.log(arg.bar);  Error  because arg is not instanceof Bar
     }
     if (arg instanceof Bar) {
-        // console.log(arg.foo);  Error!
+        // console.log(arg.foo);  Error because arg is not instanceof Foo
         console.log(arg.bar);
     }
     console.log(arg.common);
@@ -52,12 +52,12 @@ function isFoo(arg) {
 //  * Sample usage of the User Defined Type Guard
 function doStuff2(arg) {
     if (isFoo(arg)) {
-        console.log("given Foo argument : " + arg.foo); // OK
-        // console.log(arg.bar); // Error!
+        console.log("given Foo argument : " + arg.foo);
+        // console.log(arg.bar); // Error
     }
     else {
-        // console.log(arg.foo); // Error!
-        console.log("given Bar argument : " + arg.bar); // OK
+        // console.log(arg.foo); // Error
+        console.log("given Bar argument : " + arg.bar);
     }
 }
 doStuff2({ foo: 123, common: '1234' });
