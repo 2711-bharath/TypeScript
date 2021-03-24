@@ -1,0 +1,7 @@
+1. Installing typescript
+2. strict types
+3. OOPs
+4. Types
+5. Decorators
+6. Functions
+7. Type guards
